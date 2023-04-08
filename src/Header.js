@@ -1,10 +1,10 @@
 import React from 'react';
+import './Header.css'
 
 
 const Header = () => {
-    const style = {textAlign:'center', padding: 20, textTransform: 'uppercase', backgroundColor: 'black', color:'white'};
     return(
-        <div style={style}>
+        <div className='header'>
             <h1>Phone Directory</h1>
         </div>
     );
