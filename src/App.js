@@ -1,34 +1,41 @@
-import React, { Component } from 'react';
-import Header from './Header.js';
-import './App.css';
+import React, { Component } from "react";
+import Header from "./Header.js";
+import "./App.css";
+
+// let dir = [
+//   {
+//     id: 1,
+//     name: "Vishal",
+//     phone: 111111111
+//   },
+//   {
+//     id: 2,
+//     name: "Vaibhav",
+//     phone: 222222222
+//   },
+//   {
+//     id: 3,
+//     name: "Mahesh",
+//     phone: 333333333
+//   },
+//   {
+//     id: 4,
+//     name: "Sathya",
+//     phone: 444444444
+//   },
+// ]
 
 class App extends Component {
+  constructor(){
+    super();
+    this.state = {
+      subList: []
+    }
+  }
   render() {
-    let dir = [
-      {
-        id: 1,
-        name: "Vishal",
-        phone: 111111111
-      }, 
-      {
-        id: 2,
-        name: "Vaibhav",
-        phone: 222222222
-      },
-      {
-        id: 3,
-        name: "Mahesh",
-        phone: 333333333
-      },
-      {
-        id: 4,
-        name: "Sathya",
-        phone: 444444444
-      },
-    ]
     return (
       <div>
-        <Header heading="Phone Directory"/>
+        <Header heading="Phone Directory" />
         <div className="component-body-container">
           <button className="custom-btn add-btn">Add</button>
 
@@ -37,17 +44,19 @@ class App extends Component {
             <span className="grid-item phone-heading">Phone</span>
           </div>
         </div>
-            {
-              dir.map(detail => {
-                return (
-                  <div className='grid-container'>
-                    <span key={detail.id} className="grid-item">{detail.name}</span>
-                    <span key={detail.id}className="grid-item">{detail.phone}</span>
-                    <button className='custom-btn del-btn'>Delete</button>
-                  </div>
-                );
-              })
-            }
+        {this.subList?.map((detail, id) => {
+          return (
+            <div className="grid-container">
+              <span key={id} className="grid-item">
+                {detail.name}
+              </span>
+              <span key={id} className="grid-item">
+                {detail.phone}
+              </span>
+              <button className="custom-btn del-btn">Delete</button>
+            </div>
+          );
+        })}
       </div>
     );
   }
