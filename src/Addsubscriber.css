@@ -1,0 +1,17 @@
+.input-label{
+    color: gray;
+}
+
+.subscriber-input{
+    padding: 0.35rem;
+    width: 17rem;
+}
+
+.subscriber-info-form{
+    margin-top: 2rem;
+}
+
+.subscriber-info-container{
+    color: gray;
+    margin: 1.5rem 0;
+}
