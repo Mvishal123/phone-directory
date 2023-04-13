@@ -1,37 +1,15 @@
 import React, { Component } from "react";
 import Header from "./Header.js";
-import "./App.css";
+import "./ShowSubscribers.css";
 
-// let dir = [
-//   {
-//     id: 1,
-//     name: "Vishal",
-//     phone: 111111111
-//   },
-//   {
-//     id: 2,
-//     name: "Vaibhav",
-//     phone: 222222222
-//   },
-//   {
-//     id: 3,
-//     name: "Mahesh",
-//     phone: 333333333
-//   },
-//   {
-//     id: 4,
-//     name: "Sathya",
-//     phone: 444444444
-//   },
-// ]
-
-class App extends Component {
+class ShowSubscribers extends Component {
   constructor(){
     super();
-    this.state = {
-      subList: []
-    }
+    // this.state = {
+    //   subscribersListToBeAdded: []
+    // }
   }
+  
   render() {
     return (
       <div>
@@ -44,7 +22,7 @@ class App extends Component {
             <span className="grid-item phone-heading">Phone</span>
           </div>
         </div>
-        {this.subList?.map((detail, id) => {
+        {this.props.subscribersList?.map((detail, id) => {
           return (
             <div className="grid-container">
               <span key={id} className="grid-item">
@@ -61,4 +39,4 @@ class App extends Component {
     );
   }
 }
-export default App;
+export default ShowSubscribers;
